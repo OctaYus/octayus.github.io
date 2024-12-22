@@ -11,3 +11,9 @@ document.querySelectorAll('a[target="bugcrowd"]').forEach(link => {
         event.preventDefault();
     });
 });
+
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    const nav = document.querySelector('nav');
+    this.classList.toggle('open');
+    nav.classList.toggle('active');
+});
