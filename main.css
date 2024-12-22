@@ -55,35 +55,96 @@ nav a.active{
     color: #4b8fb7;
     border-bottom: 3px solid #4b8fb7;
 }
-@media(max-width:995px){
-    nav{
+header .blog{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+header .blog:hover{
+    color: #4b8fb7;
+    border-bottom: 3px solid #4b8fb7;
+}
+
+@media (max-width: 995px) {
+    /* Hide navigation links and add a burger menu */
+    nav {
         position: absolute;
-        display: none;
-        top: 0;
+        top: 100%;
         right: 0;
-        width: 40%;
-        border-left: 3px solid #4b8fb7;
-        border-bottom: 3px solid #4b8fb7;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        width: 100%;
         background-color: #161616;
-        border-top: 0.1rem solid rgba(0,0,0,0.1);
+        border-top: 2px solid #4b8fb7;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        z-index: 10;
     }
-    nav.active{
-        display: block;
+
+    nav.active {
+        display: flex;
     }
-    nav a{
+
+    nav a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 1.5rem 0;
     }
+
     nav a:hover,
-    nav a.active{
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #4b8fb7;
+    nav a.active {
+        color: #4b8fb7;
+        border-bottom: 3px solid #4b8fb7;
+    }
+
+    header .blog{
+        margin-left: 0;
+    }
+
+    /* Burger menu styles */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2.5rem;
+        height: 2rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    .menu-toggle div {
+        width: 100%;
+        height: 0.3rem;
+        background-color: #4b8fb7;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    /* Animation for menu toggle */
+    .menu-toggle.open div:nth-child(1) {
+        transform: rotate(45deg) translateY(0.7rem);
+    }
+
+    .menu-toggle.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open div:nth-child(3) {
+        transform: rotate(-45deg) translateY(-0.7rem);
+    }
+
+    /* Ensure header adapts */
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
+
 section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
